@@ -1,0 +1,21 @@
+﻿@model List<mvcCoreCrud.DB_Context.Mytable>
+
+<table class="table table-bordered table-hover">
+    <tr>
+        <th>id</th>
+        <th>name</th>
+        <th>email</th>
+
+    </tr>
+    @foreach (var i in Model)
+    {
+
+<tr>
+    <td>@i.Id</td>
+    <td>@i.Name</td>
+    <td>@i.Email.</td>
+    <td><a href="@Url.Action("delete","Home",new{i.Id})" class="btn btn-warning">DELETE</a></td>
+    <td><a href="@Url.Action("edit","Home",new{i.Id})" class="btn btn-primary">EDIT</a></td>
+</tr>
+    }
+</table>
